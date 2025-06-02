@@ -19,15 +19,22 @@
     <a href="#" onclick="carregarPDF('../pdfs/factor150.pdf'); return false;">Factor 150</a>
   </div>
 
+  <div class="abrir-nova-aba" id="linkNovaAba" style="display: none;">
+    <a id="abrirLink" href="#" target="_blank">Abrir em nova aba</a>
+  </div>
+
   <iframe id="pdf-frame" src="" title="Visualizador de PDF"></iframe>
 
   <script>
     function carregarPDF(caminho) {
       document.getElementById('pdf-frame').src = caminho;
+      const abrirLink = document.getElementById('abrirLink');
+      abrirLink.href = caminho;
+      document.getElementById('linkNovaAba').style.display = 'block';
     }
 
     function voltar() {
-      window.history.back();
+      window.location.href = '../index.html';
     }
   </script>
 </body>

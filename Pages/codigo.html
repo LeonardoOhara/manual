@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leitor de PDF</title>
+  <link rel="stylesheet" href="../Styles/pdf.css" />
+  
+</head>
+<body>
+
+  <header>
+    <h2>Leitor de Documentos PDF</h2>
+    <button class="btn-voltar" onclick="voltar()">Voltar</button>
+  </header>
+
+  <div class="pdf-links">
+    <a href="#" onclick="carregarPDF('../pdfs/tabela.pdf'); return false;">Tabela de Código ECU</a>
+  </div>
+
+  <div class="abrir-nova-aba" id="linkNovaAba" style="display: none;">
+    <a id="abrirLink" href="#" target="_blank">Abrir em nova aba</a>
+  </div>
+
+  <iframe id="pdf-frame" src="" title="Visualizador de PDF"></iframe>
+
+  <script>
+    function carregarPDF(caminho) {
+      document.getElementById('pdf-frame').src = caminho;
+      const abrirLink = document.getElementById('abrirLink');
+      abrirLink.href = caminho;
+      document.getElementById('linkNovaAba').style.display = 'block';
+    }
+
+    function voltar() {
+      window.location.href = '../index.html';
+    }
+  </script>
+</body>
+</html>

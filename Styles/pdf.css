@@ -1,15 +1,18 @@
-* {
+ * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      background-color: #f4f4f4;
     }
 
     header {
@@ -19,6 +22,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .btn-voltar {
@@ -29,10 +33,12 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
+      margin-top: 0.5rem;
     }
 
     .pdf-links {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
       padding: 1rem;
@@ -43,14 +49,55 @@
       color: #007bff;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1rem;
     }
 
     .pdf-links a:hover {
       text-decoration: underline;
     }
 
+    .abrir-nova-aba {
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .abrir-nova-aba a {
+      color: #ffffff;
+      background-color: #007bff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     iframe {
       flex: 1;
       width: 100%;
       border: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .btn-voltar {
+        width: 100%;
+      }
+
+      .pdf-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pdf-links a {
+        font-size: 1.1rem;
+      }
+
+      .abrir-nova-aba a {
+        display: inline-block;
+        width: 90%;
+      }
     }
